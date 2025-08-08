@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sparks — Mini Clone</title>
+  <style>
+    :root{--accent:#ff7ab6;--accent-2:#ffd36b;--bg:#fff;--muted:#6b7280}
+    *{box-sizing:border-box}body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;color:#111;margin:0;background:linear-gradient(180deg,#fff 0%,#fbfbff 100%)}
+    header{position:sticky;top:0;backdrop-filter:blur(6px);background:rgba(255,255,255,0.8);border-bottom:1px solid rgba(0,0,0,0.04);z-index:50}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:700}
+    .logo .mark{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#ffb3d9);display:flex;align-items:center;justify-content:center;color:white;font-weight:800}
+    nav ul{display:flex;gap:18px;list-style:none;padding:0;margin:0}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600}
+    .cta{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+
+    /* hero */
+    .hero{padding:56px 0;display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
+    .hero h1{font-size:34px;margin:0 0 10px}
+    .hero p{color:var(--muted);margin:0 0 18px}
+    .hero .actions{display:flex;gap:10px}
+    .card{background:#fff;padding:18px;border-radius:14px;box-shadow:0 6px 20px rgba(17,24,39,0.06)}
+    .programs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+    .programs .prog{padding:18px;border-radius:12px;text-align:center}
+    .prog h4{margin:8px 0 6px}
+
+    /* testimonials */
+    .testi{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:48px 0}
+    .testi .list{display:flex;flex-direction:column;gap:12px}
+
+    footer{padding:28px 0;color:var(--muted)}
+
+    /* floating whatsapp */
+    .whatsapp{position:fixed;right:20px;bottom:20px;background:#25d366;color:white;border-radius:999px;padding:14px 16px;display:flex;align-items:center;gap:10px;text-decoration:none;box-shadow:0 8px 30px rgba(37,211,102,0.18)}
+
+    /* responsive */
+    @media (max-width:900px){.hero{grid-template-columns:1fr;}.programs{grid-template-columns:repeat(2,1fr)}nav ul{display:none}.menu-btn{display:inline-block}}
+    @media (max-width:560px){.programs{grid-template-columns:1fr}.testi{grid-template-columns:1fr}.hero h1{font-size:26px}}
+
+    .menu-btn{display:none;background:none;border:0;font-weight:700}
+    .mobile-nav{display:none}
+    .mobile-nav.open{display:block;position:absolute;left:0;right:0;top:72px;background:white;padding:12px;border-bottom:1px solid rgba(0,0,0,0.04)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo"><div class="mark">S</div><div>Sparks Education</div></div>
+      <nav>
+        <button class="menu-btn" aria-label="menu" onclick="toggleMenu()">☰</button>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#tentang">Tentang</a></li>
+          <li><a href="#program">Program</a></li>
+          <li><a href="#lokasi">Lokasi</a></li>
+          <li><a href="#blog">Blog</a></li>
+        </ul>
+      </nav>
+      <a class="cta" href="https://api.whatsapp.com/send?phone=6282130555557&text=Halo%20Sparks%20English">Free Trial Class</a>
+    </div>
+    <div id="mobileMenu" class="mobile-nav" style="display:none">
+      <div class="container">
+        <a href="#home">Home</a><br>
+        <a href="#tentang">Tentang</a><br>
+        <a href="#program">Program</a><br>
+        <a href="#lokasi">Lokasi</a><br>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="home" class="hero">
+      <div>
+        <h1>Kursus Bahasa Inggris Anak Premium</h1>
+        <p>Daftar Kursus Bahasa Inggris untuk anak dan remaja dengan kurikulum interaktif, guru profesional, dan fasilitas nyaman.</p>
+        <div class="actions">
+          <a class="cta" href="#program">Lihat Program</a>
+          <a class="card" href="https://api.whatsapp.com/send?phone=6282130555557&text=Halo%20Sparks%20English">Chat Whatsapp</a>
+        </div>
+
+        <div class="card" style="margin-top:20px">
+          <strong>Program Kursus</strong>
+          <div class="programs">
+            <div class="prog"><img src="https://picsum.photos/seed/l1/300/160" alt="little" style="width:100%;border-radius:8px"><h4>Little Sparks</h4><div class="muted">3-6 Tahun</div></div>
+            <div class="prog"><img src="https://picsum.photos/seed/l2/300/160" alt="kid" style="width:100%;border-radius:8px"><h4>Sparks Kid</h4><div class="muted">7-9 Tahun</div></div>
+            <div class="prog"><img src="https://picsum.photos/seed/l3/300/160" alt="teen" style="width:100%;border-radius:8px"><h4>Sparks Teen</h4><div class="muted">10-13 Tahun</div></div>
+          </div>
+        </div>
+      </div>
+      <aside>
+        <div class="card">
+          <img src="https://picsum.photos/seed/hero/420/300" alt="hero" style="width:100%;border-radius:10px;margin-bottom:12px">
+          <h4>Free Trial Class</h4>
+          <p class="muted">Coba kelas gratis setiap hari. Klik tombol WhatsApp untuk daftar.</p>
+          <a class="cta" href="https://api.whatsapp.com/send?phone=6282130555557&text=Daftar%20Free%20Trial">Daftar Gratis</a>
+        </div>
+      </aside>
+    </section>
+
+    <section id="tentang">
+      <h2>Tentang Sparks</h2>
+      <p class="muted">Sparks Education hadir sebagai pusat pendidikan yang efektif dan terjangkau untuk anak dan remaja. Kami percaya belajar bahasa adalah investasi jangka panjang.</p>
+    </section>
+
+    <section class="testi">
+      <div>
+        <h3>Keunggulan</h3>
+        <div class="list">
+          <div class="card">Fun & Interactive Learning</div>
+          <div class="card">Professional & Qualified Teachers</div>
+          <div class="card">Modern & Luxury Facilities</div>
+          <div class="card">Affordable Education</div>
+        </div>
+      </div>
+      <div>
+        <h3>Testimonial</h3>
+        <div class="list">
+          <div class="card">"Anak saya jadi lebih percaya diri setelah 2 bulan."<br><small class="muted">— Mommy Kamila</small></div>
+          <div class="card">"Belajar sambil bermain, hasilnya terlihat."<br><small class="muted">— Mommy Rieke</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="lokasi">
+      <h3>Lokasi Terdekat</h3>
+      <div class="card">
+        <strong>BSD</strong><br>
+        Ruko Pasar Modern Timur, Tangerang Selatan
+      </div>
+    </section>
+  </main>
+
+  <a class="whatsapp" href="https://wa.me/6282130555557?text=Halo%20Sparks%20English" target="_blank">💬 Chat WhatsApp</a>
+
+  <footer class="container">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <div>© 2025 Sparks Education</div>
+      <div style="color:var(--muted)">Follow: @sparks_english</div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu(){
+      const m = document.getElementById('mobileMenu');
+      if(!m) return;
+      m.style.display = m.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        e.preventDefault();
+        const t = document.querySelector(a.getAttribute('href'));
+        if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
+      })
+    })
+  </script>
+</body>
+</html>
