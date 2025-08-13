@@ -1,53 +1,244 @@
 <!doctype html>
 <html lang="id">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Kumon Apartemen Puri Garden</title>
   <style>
-    :root{--accent:#ff7ab6;--accent-2:#ffd36b;--bg:#fff;--muted:#6b7280}
-    *{box-sizing:border-box}body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;color:#111;margin:0;background:linear-gradient(180deg,#fff 0%,#fbfbff 100%)}
-    header{position:sticky;top:0;backdrop-filter:blur(6px);background:rgba(255,255,255,0.8);border-bottom:1px solid rgba(0,0,0,0.04);z-index:50}
-    .container{max-width:1100px;margin:0 auto;padding:0 20px}
-    .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
-    .logo{display:flex;align-items:center;gap:10px;font-weight:700}
-    .logo .mark{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#ffb3d9);display:flex;align-items:center;justify-content:center;color:white;font-weight:800}
-    nav ul{display:flex;gap:18px;list-style:none;padding:0;margin:0}
-    nav a{color:var(--muted);text-decoration:none;font-weight:600}
-    .cta{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+    :root {
+      --accent: #ff7ab6;
+      --accent-2: #ffd36b;
+      --bg: #fff;
+      --muted: #6b7280
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color: #111;
+      margin: 0;
+      background: linear-gradient(180deg, #fff 0%, #fbfbff 100%)
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(6px);
+      background: rgba(255, 255, 255, 0.8);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+      z-index: 50
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700
+    }
+
+    .logo .mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), #ffb3d9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 800
+    }
+
+    nav ul {
+      display: flex;
+      gap: 18px;
+      list-style: none;
+      padding: 0;
+      margin: 0
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 600
+    }
+
+    .cta {
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700
+    }
 
     /* hero */
-    .hero{padding:56px 0;display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
-    .hero h1{font-size:34px;margin:0 0 10px}
-    .hero p{color:var(--muted);margin:0 0 18px}
-    .hero .actions{display:flex;gap:10px}
-    .card{background:#fff;padding:18px;border-radius:14px;box-shadow:0 6px 20px rgba(17,24,39,0.06)}
-    .programs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
-    .programs .prog{padding:18px;border-radius:12px;text-align:center}
-    .prog h4{margin:8px 0 6px}
+    .hero {
+      padding: 56px 0;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 28px;
+      align-items: center
+    }
+
+    .hero h1 {
+      font-size: 34px;
+      margin: 0 0 10px
+    }
+
+    .hero p {
+      color: var(--muted);
+      margin: 0 0 18px
+    }
+
+    .hero .actions {
+      display: flex;
+      gap: 10px
+    }
+
+    .card {
+      background: #fff;
+      padding: 18px;
+      border-radius: 14px;
+      box-shadow: 0 6px 20px rgba(17, 24, 39, 0.06)
+    }
+
+    .programs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 22px
+    }
+
+    .programs .prog {
+      padding: 18px;
+      border-radius: 12px;
+      text-align: center
+    }
+
+    .prog h4 {
+      margin: 8px 0 6px
+    }
 
     /* testimonials */
-    .testi{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:48px 0}
-    .testi .list{display:flex;flex-direction:column;gap:12px}
+    .testi {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      padding: 48px 0
+    }
 
-    footer{padding:28px 0;color:var(--muted)}
+    .testi .list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px
+    }
+
+    footer {
+      padding: 28px 0;
+      color: var(--muted)
+    }
 
     /* floating whatsapp */
-    .whatsapp{position:fixed;right:20px;bottom:20px;background:#25d366;color:white;border-radius:999px;padding:14px 16px;display:flex;align-items:center;gap:10px;text-decoration:none;box-shadow:0 8px 30px rgba(37,211,102,0.18)}
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: #25d366;
+      color: white;
+      border-radius: 999px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      box-shadow: 0 8px 30px rgba(37, 211, 102, 0.18)
+    }
 
     /* responsive */
-    @media (max-width:900px){.hero{grid-template-columns:1fr;}.programs{grid-template-columns:repeat(2,1fr)}nav ul{display:none}.menu-btn{display:inline-block}}
-    @media (max-width:560px){.programs{grid-template-columns:1fr}.testi{grid-template-columns:1fr}.hero h1{font-size:26px}}
+    @media (max-width:900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
 
-    .menu-btn{display:none;background:none;border:0;font-weight:700}
-    .mobile-nav{display:none}
-    .mobile-nav.open{display:block;position:absolute;left:0;right:0;top:72px;background:white;padding:12px;border-bottom:1px solid rgba(0,0,0,0.04)}
+      .programs {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      nav ul {
+        display: none
+      }
+
+      .menu-btn {
+        display: inline-block
+      }
+    }
+
+    @media (max-width:560px) {
+      .programs {
+        grid-template-columns: 1fr
+      }
+
+      .testi {
+        grid-template-columns: 1fr
+      }
+
+      .hero h1 {
+        font-size: 26px
+      }
+    }
+
+    .menu-btn {
+      display: none;
+      background: none;
+      border: 0;
+      font-weight: 700
+    }
+
+    .mobile-nav {
+      display: none
+    }
+
+    .mobile-nav.open {
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 72px;
+      background: white;
+      padding: 12px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04)
+    }
+
+    .card-maps{
+      margin-top: 10px;
+    }
   </style>
 </head>
+
 <body>
   <header>
     <div class="container nav">
-      <div class="logo"><div class="mark">S</div><div>Kumon Education</div></div>
+      <div class="logo">
+        <div class="mark">S</div>
+        <div>Kumon Education</div>
+      </div>
       <nav>
         <button class="menu-btn" aria-label="menu" onclick="toggleMenu()">☰</button>
         <ul>
@@ -58,7 +249,9 @@
           <li><a href="#blog">Blog</a></li>
         </ul>
       </nav>
-      <a class="cta" href="https://api.whatsapp.com/send?phone=6281296923699&text=Halo%20Kumon%20Apartemen purigarden">Free Trial Class</a>
+      <a class="cta"
+        href="https://api.whatsapp.com/send?phone=6281296923699&text=Halo%20Kumon%20Apartemen purigarden">Free Trial
+        Class</a>
     </div>
     <div id="mobileMenu" class="mobile-nav" style="display:none">
       <div class="container">
@@ -74,26 +267,42 @@
     <section id="home" class="hero">
       <div>
         <h1>Subjek Matematika, Bahasa Inggris dan Bahasa Indonesia</h1>
-        <p>Daftar Kursus untuk anak dan anak dengan kurikulum interaktif, Tutor profesional, dan fasilitas nyaman dan lengkap.</p>
+        <p>Daftar Kursus untuk anak dan anak dengan kurikulum interaktif, Tutor profesional, dan fasilitas nyaman dan
+          lengkap.</p>
         <div class="actions">
           <a class="cta" href="#program">Lihat Program</a>
-          <a class="card" href="https://api.whatsapp.com/send?phone=6281296923699&text=Halo%20Kumon%20Apartemenpurigarden">Chat Whatsapp</a>
+          <a class="card"
+            href="https://api.whatsapp.com/send?phone=6281296923699&text=Halo%20Kumon%20Apartemenpurigarden">Chat
+            Whatsapp</a>
         </div>
 
         <div class="card" style="margin-top:20px">
           <strong>Program Kursus</strong>
           <div class="programs">
 
-          ![alt text](https://github.com/Nnciwp/Kumon-Apartemen-Puri-Garden/blob/main/WhatsApp%20Image%202025-08-12%20at%206.14.34%20AM.jpeg?raw=true)
-            <div class="prog"><img src="https://drive.google.com/uc?export=view&id=1mgwpcP_JXBTyQS6Mb-SG9hgxupWcSTNa" style="width:100%;border-radius:8px"><h4>Offline Class </h4></h4><div class="muted">datang setiap hari selasa dan jumat</div></div>
-            <div class="prog"><img src="https://picsum.photos/seed/l2/300/160" alt="kid" style="width:100%;border-radius:8px"><h4>Online Class</h4><div class="muted">Melalui zoom</div></div>
-            <div class="prog"><img src="https://picsum.photos/seed/l3/300/160" alt="teen" style="width:100%;border-radius:8px"><h4>Kumon Connect</h4><div class="muted">Menggunakan tab sesuai support kumon</div></div>
+            <!-- ![alt text](https://github.com/Nnciwp/Kumon-Apartemen-Puri-Garden/blob/main/WhatsApp%20Image%202025-08-12%20at%206.14.34%20AM.jpeg?raw=true) -->
+            <div class="prog"><img src="img/img.jpeg" style="width:100%;border-radius:8px">
+              <h4>Offline Class </h4>
+              </h4>
+              <div class="muted">datang setiap hari selasa dan jumat</div>
+            </div>
+            <div class="prog"><img src="https://picsum.photos/seed/l2/300/160" alt="kid"
+                style="width:100%;border-radius:8px">
+              <h4>Online Class</h4>
+              <div class="muted">Melalui zoom</div>
+            </div>
+            <div class="prog"><img src="https://picsum.photos/seed/l3/300/160" alt="teen"
+                style="width:100%;border-radius:8px">
+              <h4>Kumon Connect</h4>
+              <div class="muted">Menggunakan tab sesuai support kumon</div>
+            </div>
           </div>
         </div>
       </div>
       <aside>
         <div class="card">
-          <img src="https://picsum.photos/seed/hero/420/300" alt="hero" style="width:100%;border-radius:10px;margin-bottom:12px">
+          <img src="https://picsum.photos/seed/hero/420/300" alt="hero"
+            style="width:100%;border-radius:10px;margin-bottom:12px">
           <h4>Free Trial Class</h4>
           <p class="muted">Tes Penempatan. Klik tombol WhatsApp untuk daftar.</p>
           <a class="cta" href="https://api.whatsapp.com/send?phone=6281296923699&text=Daftar%20Free%20Trial">Daftar</a>
@@ -103,7 +312,8 @@
 
     <section id="tentang">
       <h2>Tentang Kumon Apartemen Puri Garden</h2>
-      <p class="muted"> Metode Kumon adalah metode perseorangan yang membantu anak belajar pada tingkatan yang tepat tanpa mempertimbangkan usia maupun kelasnya sehingga anak bisa menguasai materi diatas tingkatan kelasnya .</p>
+      <p class="muted"> Metode Kumon adalah metode perseorangan yang membantu anak belajar pada tingkatan yang tepat
+        tanpa mempertimbangkan usia maupun kelasnya sehingga anak bisa menguasai materi diatas tingkatan kelasnya .</p>
     </section>
 
     <section class="testi">
@@ -111,29 +321,39 @@
         <h3>Manfaat</h3>
         <div class="list">
           <div class="card">Belajar Mandiri - Membantu anak mengembangkan keterampilan belajar mandiri</div>
-          <div class="card">Meningkatkan Akademis - Meningkatkan kemampuan akademis Matematika, Bahasa Inggris dan Bahasa Indonesia sesuai kemampuan anak, sehingga kinerja akademis sekolah lebih baik</div>
-          <div class="card">Dispilin dan Rutinitas belajar harian - membentuk kebiasaan belajar teratur , konsisten dan dispilin, sekaligus melatih pengelolaan waktu serta tanggung jawab.</div>
-          <div class="card">Penyesuaian kecepatan belajar individu - kurikulum disesuaikan dengan kemampuan dan kecepatan belajar masing- masing anak.</div>
+          <div class="card">Meningkatkan Akademis - Meningkatkan kemampuan akademis Matematika, Bahasa Inggris dan
+            Bahasa Indonesia sesuai kemampuan anak, sehingga kinerja akademis sekolah lebih baik</div>
+          <div class="card">Dispilin dan Rutinitas belajar harian - membentuk kebiasaan belajar teratur , konsisten dan
+            dispilin, sekaligus melatih pengelolaan waktu serta tanggung jawab.</div>
+          <div class="card">Penyesuaian kecepatan belajar individu - kurikulum disesuaikan dengan kemampuan dan
+            kecepatan belajar masing- masing anak.</div>
         </div>
       </div>
       <div>
         <h3>Testimonial</h3>
         <div class="list">
-          <div class="card">"Anak saya jadi lebih rutin,mandiri, dan konsisten dalam belajar setelah masuk Kumon."<br><small class="muted">— Rumaisya </small></div>
-    
-   <section id="lokasi">
-      <h3>Lokasi Terdekat</h3>
-      <div class="card">
-        <strong>Kembangan</strong><br>
-        Kembangan, Jakarta Barat
-        <strong>Kembangan</strong><br>
-        Apartemen Puri Garden, Jakarta Barat
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.5909863951124!2d106.73277017369955!3d-6.185455260602121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f7bce8b7bcf7%3A0x48ee0ccff3f81be8!2sKUMON%20APARTEMEN%20PURI%20GARDEN!5e0!3m2!1sid!2sid!4v1754659802854!5m2!1sid!2sid" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </section>
+          <div class="card">"Anak saya jadi lebih rutin,mandiri, dan konsisten dalam belajar setelah masuk
+            Kumon."<br><small class="muted">— Rumaisya </small></div>
+
+          <section id="lokasi">
+            <h3>Lokasi Terdekat</h3>
+            <div class="card">
+              <strong>Kembangan</strong><br>
+              Kembangan, Jakarta Barat
+              <strong>Kembangan</strong><br>
+              Apartemen Puri Garden, Jakarta Barat
+              <div class="card-maps">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.5909863951124!2d106.73277017369955!3d-6.185455260602121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f7bce8b7bcf7%3A0x48ee0ccff3f81be8!2sKUMON%20APARTEMEN%20PURI%20GARDEN!5e0!3m2!1sid!2sid!4v1754659802854!5m2!1sid!2sid"
+                  width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+          </section>
   </main>
 
-  <a class="whatsapp" href="https://wa.me/6281296923699?text=Halo%20Kumon Apartemen%20Puri garden" target="_blank">💬 Chat WhatsApp</a>
+  <a class="whatsapp" href="https://wa.me/6281296923699?text=Halo%20Kumon Apartemen%20Puri garden" target="_blank">💬
+    Chat WhatsApp</a>
 
   <footer class="container">
     <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
@@ -143,20 +363,21 @@
   </footer>
 
   <script>
-    function toggleMenu(){
+    function toggleMenu() {
       const m = document.getElementById('mobileMenu');
-      if(!m) return;
+      if (!m) return;
       m.style.display = m.style.display === 'block' ? 'none' : 'block';
     }
 
     // smooth scroll for internal links
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
         e.preventDefault();
         const t = document.querySelector(a.getAttribute('href'));
-        if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
+        if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
       })
     })
   </script>
 </body>
+
 </html>
